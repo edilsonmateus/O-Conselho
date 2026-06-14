@@ -23,7 +23,7 @@ except ImportError:
 
 app = Flask(__name__)
 
-DATA_DIR     = os.environ.get("DATA_DIR", "/data")
+DATA_DIR = os.environ.get("DATA_DIR", "./data")
 HISTORY_FILE = os.path.join(DATA_DIR, "historico_77gira.json")
 os.makedirs(DATA_DIR, exist_ok=True)
 
