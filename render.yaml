@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: conselho-77gira
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --workers 2 --timeout 120
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PYTHON_VERSION
+        value: 3.11.0
+    disk:
+      name: dados-77gira
+      mountPath: /data
+      sizeGB: 1
